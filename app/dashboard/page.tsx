@@ -164,30 +164,28 @@ export default function DashboardPage() {
                 <User className="w-4 h-4" />
                 <span>{user?.email}</span>
               </div>
-              <Button
+              <button
                 onClick={handleLogout}
-                variant="outline"
-                size="sm"
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
               >
                 <LogOut className="w-4 h-4" />
                 {t('dashboard.logout')}
-              </Button>
+              </button>
             </div>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         {/* Welcome Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 text-white mb-8">
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 text-white">
           <h2 className="text-2xl font-bold mb-2">{t('dashboard.welcome')}</h2>
           <p className="text-blue-100">{t('dashboard.subtitle')}</p>
         </div>
 
         {/* Quick Actions */}
-        <CardGrid cols={4} className="mb-8">
+        <CardGrid cols={4}>
           <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition-shadow">
             <div className="flex flex-col items-center text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
@@ -257,8 +255,8 @@ export default function DashboardPage() {
         </CardGrid>
 
         {/* Fitness Stats Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-lg shadow p-6 border border-gray-100 bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="bg-white rounded-lg shadow p-6 border border-gray-100">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
                 <Activity className="w-5 h-5 text-blue-600" />
@@ -272,42 +270,42 @@ export default function DashboardPage() {
             </p>
           </div>
 
-            <div className="bg-white rounded-lg shadow p-6 border border-gray-100">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                  <Flame className="w-5 h-5 text-orange-600" />
-                </div>
-                <h3 className="font-semibold text-gray-900">{t('dashboard.statsCal')}</h3>
+          <div className="bg-white rounded-lg shadow p-6 border border-gray-100">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                <Flame className="w-5 h-5 text-orange-600" />
               </div>
-              <p className="text-3xl font-bold text-gray-900 mb-1">4,250</p>
-              <p className="text-sm text-gray-500">Active kcal {t('workouts.thisMonth')}</p>
+              <h3 className="font-semibold text-gray-900">{t('dashboard.statsCal')}</h3>
             </div>
+            <p className="text-3xl font-bold text-gray-900 mb-1">4,250</p>
+            <p className="text-sm text-gray-500">Active kcal {t('workouts.thisMonth')}</p>
+          </div>
 
-            <div className="bg-white rounded-lg shadow p-6 border border-gray-100">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <Dumbbell className="w-5 h-5 text-purple-600" />
-                </div>
-                <h3 className="font-semibold text-gray-900">{t('dashboard.statsVol')}</h3>
+          <div className="bg-white rounded-lg shadow p-6 border border-gray-100">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                <Dumbbell className="w-5 h-5 text-purple-600" />
               </div>
-              <p className="text-3xl font-bold text-gray-900 mb-1">12.5k</p>
-              <p className="text-sm text-gray-500">kg lifted {t('workouts.thisMonth')}</p>
+              <h3 className="font-semibold text-gray-900">{t('dashboard.statsVol')}</h3>
             </div>
+            <p className="text-3xl font-bold text-gray-900 mb-1">12.5k</p>
+            <p className="text-sm text-gray-500">kg lifted {t('workouts.thisMonth')}</p>
+          </div>
 
-            <div className="bg-white rounded-lg shadow p-6 border border-gray-100">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                  <Target className="w-5 h-5 text-green-600" />
-                </div>
-                <h3 className="font-semibold text-gray-900">{t('dashboard.statsStreak')}</h3>
+          <div className="bg-white rounded-lg shadow p-6 border border-gray-100">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                <Target className="w-5 h-5 text-green-600" />
               </div>
-              <p className="text-3xl font-bold text-gray-900 mb-1">4 <span className="text-xl text-gray-500 font-normal">days</span></p>
-              <p className="text-sm text-gray-500">Keep it up!</p>
+              <h3 className="font-semibold text-gray-900">{t('dashboard.statsStreak')}</h3>
             </div>
+            <p className="text-3xl font-bold text-gray-900 mb-1">4 <span className="text-xl text-gray-500 font-normal">days</span></p>
+            <p className="text-sm text-gray-500">Keep it up!</p>
+          </div>
         </div>
 
         {/* Recent Workouts */}
-        <div className="mb-8">
+        <div>
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-xl font-bold text-gray-900">{t('dashboard.recentWorkouts')}</h2>
             <Button variant="outline" className="text-blue-600 border-blue-200 hover:bg-blue-50" onClick={() => router.push('/workouts')}>
@@ -341,137 +339,148 @@ export default function DashboardPage() {
         </div>
 
         {/* TDEE Section */}
-          <div className="bg-white rounded-lg shadow p-6 border border-gray-100">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-lg font-semibold text-gray-900">{t('dashboard.tdeeTitle')}</h2>
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={() => setShowTDEE(!showTDEE)}
-              >
-                {showTDEE ? t('dashboard.hideTDEE') : t('dashboard.showTDEE')}
-              </Button>
-            </div>
+        <div className="bg-white rounded-lg shadow p-6 border border-gray-100">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-lg font-semibold text-gray-900">{t('dashboard.tdeeTitle')}</h2>
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => setShowTDEE(!showTDEE)}
+            >
+              {showTDEE ? t('dashboard.hideTDEE') : t('dashboard.showTDEE')}
+            </Button>
+          </div>
 
           {showTDEE && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-gray-50 rounded-lg">
-              <div>
-                <h3 className="font-medium text-gray-900 mb-4">Personal Information</h3>
-                <div className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <Label className="text-sm font-medium text-gray-700">Age</Label>
-                      <Input
-                        type="number"
-                        value={tdeeData.age}
-                        onChange={(e) => updateTDEEData('age', parseInt(e.target.value) || 0)}
-                        min="1"
-                        max="120"
-                      />
-                    </div>
-                    <div>
-                      <Label className="text-sm font-medium text-gray-700">Gender</Label>
-                      <select
-                        value={tdeeData.gender}
-                        onChange={(e) => updateTDEEData('gender', e.target.value)}
-                        className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      >
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                      </select>
-                    </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 bg-gray-50 rounded-xl border border-gray-100">
+              {/* Profile Inputs */}
+              <div className="space-y-6">
+                <h3 className="font-bold text-gray-900 flex items-center gap-2 pb-2 border-b">
+                  <User className="w-4 h-4 text-blue-500" />
+                  Personal Details
+                </h3>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label className="text-xs font-semibold uppercase tracking-wider text-gray-500">Age</Label>
+                    <Input
+                      type="number"
+                      value={tdeeData.age}
+                      onChange={(e) => updateTDEEData('age', parseInt(e.target.value) || 0)}
+                      className="bg-white"
+                    />
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <Label className="text-sm font-medium text-gray-700">Height (cm)</Label>
-                      <Input
-                        type="number"
-                        value={tdeeData.height}
-                        onChange={(e) => updateTDEEData('height', parseFloat(e.target.value) || 0)}
-                        min="100"
-                        max="250"
-                      />
-                    </div>
-                    <div>
-                      <Label className="text-sm font-medium text-gray-700">Weight (kg)</Label>
-                      <Input
-                        type="number"
-                        value={tdeeData.weight}
-                        onChange={(e) => updateTDEEData('weight', parseFloat(e.target.value) || 0)}
-                        min="30"
-                        max="300"
-                        step="0.1"
-                      />
-                    </div>
+                  <div className="space-y-2">
+                    <Label className="text-xs font-semibold uppercase tracking-wider text-gray-500">Gender</Label>
+                    <select
+                      value={tdeeData.gender}
+                      onChange={(e) => updateTDEEData('gender', e.target.value)}
+                      className="w-full h-10 px-3 bg-white border border-gray-200 rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
+                    >
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <Label className="text-sm font-medium text-gray-700">Activity Level</Label>
-                      <select
-                        value={tdeeData.activityLevel}
-                        onChange={(e) => updateTDEEData('activityLevel', e.target.value)}
-                        className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      >
-                        <option value="sedentary">Sedentary</option>
-                        <option value="light">Light</option>
-                        <option value="moderate">Moderate</option>
-                        <option value="active">Active</option>
-                        <option value="very-active">Very Active</option>
-                      </select>
-                    </div>
-                    <div>
-                      <Label className="text-sm font-medium text-gray-700">Goal</Label>
-                      <select
-                        value={tdeeData.goal}
-                        onChange={(e) => updateTDEEData('goal', e.target.value)}
-                        className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      >
-                        <option value="lose">Lose Weight</option>
-                        <option value="maintain">Maintain Weight</option>
-                        <option value="gain">Gain Weight</option>
-                      </select>
-                    </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label className="text-xs font-semibold uppercase tracking-wider text-gray-500">Height (cm)</Label>
+                    <Input
+                      type="number"
+                      value={tdeeData.height}
+                      onChange={(e) => updateTDEEData('height', parseFloat(e.target.value) || 0)}
+                      className="bg-white"
+                    />
                   </div>
+                  <div className="space-y-2">
+                    <Label className="text-xs font-semibold uppercase tracking-wider text-gray-500">Weight (kg)</Label>
+                    <Input
+                      type="number"
+                      value={tdeeData.weight}
+                      onChange={(e) => updateTDEEData('weight', parseFloat(e.target.value) || 0)}
+                      className="bg-white"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label className="text-xs font-semibold uppercase tracking-wider text-gray-500">Activity Level</Label>
+                  <select
+                    value={tdeeData.activityLevel}
+                    onChange={(e) => updateTDEEData('activityLevel', e.target.value)}
+                    className="w-full h-10 px-3 bg-white border border-gray-200 rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
+                  >
+                    <option value="sedentary">Sedentary (Office job)</option>
+                    <option value="light">Light (1-2 days/week)</option>
+                    <option value="moderate">Moderate (3-5 days/week)</option>
+                    <option value="active">Active (6-7 days/week)</option>
+                    <option value="very-active">Very Active (Elite athlete)</option>
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <Label className="text-xs font-semibold uppercase tracking-wider text-gray-500">Your Goal</Label>
+                  <select
+                    value={tdeeData.goal}
+                    onChange={(e) => updateTDEEData('goal', e.target.value)}
+                    className="w-full h-10 px-3 bg-white border border-gray-200 rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
+                  >
+                    <option value="lose">Lose Weight</option>
+                    <option value="maintain">Maintain weight</option>
+                    <option value="gain">Gain Muscle</option>
+                  </select>
                 </div>
               </div>
 
-              <div>
-                <h3 className="font-medium text-gray-900 mb-4">Your Results</h3>
-                <div className="space-y-4 p-4 bg-white rounded-lg border">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">BMR</span>
-                      <span className="font-semibold text-purple-600">{tdeeResults.bmr} kcal/day</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">TDEE</span>
-                      <span className="font-semibold text-blue-600">{tdeeResults.tdee} kcal/day</span>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">Target Calories</span>
-                      <span className="font-semibold text-green-600">{tdeeResults.targetCalories} kcal/day</span>
+              {/* Results Display */}
+              <div className="space-y-6">
+                <h3 className="font-bold text-gray-900 flex items-center gap-2 pb-2 border-b">
+                  <Flame className="w-4 h-4 text-orange-500" />
+                  Nutrition Results
+                </h3>
+
+                <div className="bg-white p-6 rounded-xl border border-blue-50 shadow-sm space-y-4">
+                  <div className="text-center pb-4 border-b">
+                    <div className="text-sm font-medium text-gray-500 mb-1">Target Calories</div>
+                    <div className="text-4xl font-black text-blue-600 tracking-tight">
+                      {tdeeResults.targetCalories}
+                      <span className="text-sm font-bold text-gray-400 ml-1 uppercase">kcal/day</span>
                     </div>
                   </div>
-                  <div className="border-t pt-4">
-                    <h4 className="font-medium text-gray-900 mb-3">Daily Macros</h4>
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="text-center">
-                        <div className="text-sm text-gray-600 mb-1">Protein</div>
-                        <div className="text-lg font-bold text-purple-600">{tdeeResults.protein}g</div>
-                        <div className="text-xs text-gray-500">({Math.round((tdeeResults.protein * 4) / tdeeResults.targetCalories)}%)</div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center p-3 bg-purple-50 rounded-lg">
+                      <div className="text-[10px] uppercase font-bold text-purple-400 mb-1">BMR</div>
+                      <div className="text-sm font-bold text-purple-700">{tdeeResults.bmr}</div>
+                    </div>
+                    <div className="text-center p-3 bg-indigo-50 rounded-lg">
+                      <div className="text-[10px] uppercase font-bold text-indigo-400 mb-1">TDEE</div>
+                      <div className="text-sm font-bold text-indigo-700">{tdeeResults.tdee}</div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3 pt-2">
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                        <span className="text-sm font-medium text-gray-600">Protein</span>
                       </div>
-                      <div className="text-center">
-                        <div className="text-sm text-gray-600 mb-1">Carbs</div>
-                        <div className="text-lg font-bold text-blue-600">{tdeeResults.carbs}g</div>
-                        <div className="text-xs text-gray-500">({Math.round((tdeeResults.carbs * 4) / tdeeResults.targetCalories)}%)</div>
+                      <span className="text-sm font-bold text-gray-900">{tdeeResults.protein}g</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                        <span className="text-sm font-medium text-gray-600">Carbs</span>
                       </div>
-                      <div className="text-center">
-                        <div className="text-sm text-gray-600 mb-1">Fats</div>
-                        <div className="text-lg font-bold text-orange-600">{tdeeResults.fats}g</div>
-                        <div className="text-xs text-gray-500">({Math.round((tdeeResults.fats * 9) / tdeeResults.targetCalories)}%)</div>
+                      <span className="text-sm font-bold text-gray-900">{tdeeResults.carbs}g</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-orange-500"></div>
+                        <span className="text-sm font-medium text-gray-600">Fats</span>
                       </div>
+                      <span className="text-sm font-bold text-gray-900">{tdeeResults.fats}g</span>
                     </div>
                   </div>
                 </div>
