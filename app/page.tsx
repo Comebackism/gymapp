@@ -23,7 +23,7 @@ export default function LandingPage() {
                 GymApp
               </span>
             </div>
-            <div className="flex items-center gap-4 mr-24 md:mr-0">
+            <div className="flex items-center gap-4">
               <Link href="/login" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
                 {t('nav.login')}
               </Link>
